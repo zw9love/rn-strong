@@ -17,11 +17,11 @@ import {
     StatusBar
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-import Child1 from './TabChild/Child1'
-import Child2 from './TabChild/Child2'
-import Child3 from './TabChild/Child3'
-import Child4 from './TabChild/Child4'
-import Show from './TabChild/Show'
+import Child1 from './TabChild/pages/Child1'
+import Child2 from './TabChild/pages/Child2'
+import Child3 from './TabChild/pages/Child3'
+import Child4 from './TabChild/pages/Child4'
+import Show from './TabChild/pages/Show'
 
 // const Dimensions = require('Dimensions');
 // let {width,height} = Dimensions.get('window');
