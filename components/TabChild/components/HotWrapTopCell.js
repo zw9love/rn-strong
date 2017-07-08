@@ -8,15 +8,25 @@ import {
     View,
     TouchableOpacity,
     Image,
+    Dimensions
 } from 'react-native';
 
-const Dimensions = require('Dimensions');
+import ClassicShow from '../pages/ClassicShow'
+
 let {width} = Dimensions.get('window');
 
 export default React.createClass({
+    jump(){
+        if(!this.props.navigator) return;
+        this.props.navigator.push({
+            component:ClassicShow,
+            // passProps:{}  //传递过去的参数
+            passProps:this.props.data
+        })
+    },
     render(){
         return(
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.jump}>
                 <View style={styles.container}>
                     <View style={styles.leftWrap}>
                         <Text style={styles.title}>{this.props.data.title}</Text>

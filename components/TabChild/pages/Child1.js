@@ -11,9 +11,12 @@ import {
     Image,
     TextInput,
     RefreshControl,
-    StatusBar
+    StatusBar,
+    ListView,
+    Dimensions
 } from 'react-native';
 import TimerMixin from 'react-timer-mixin'
+import {styles} from '../styles/Child1Style'
 
 import Advertisement from '../components/Advertisement'
 import Effect from '../components/Effect'
@@ -27,8 +30,8 @@ import Address from './Address'
 import Message from './Message'
 import WebPage from './WebPage'
 import ClassicShow from './ClassicShow'
+import Mock from 'mockjs'
 
-const Dimensions = require('Dimensions');
 let {width, height} = Dimensions.get('window');
 
 export default React.createClass({
@@ -119,68 +122,30 @@ export default React.createClass({
                         {/*名店右边*/}
                         <View style={styles.storeRight}>
                             <Advertisement data={{title:'天天特价',info:'优惠不打烊',style:{color:'#FF6100'},
-                            data:[
-                                {url:require('../../../assets/img/eat3.png'),title:'炭牛韩国烤肉3',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:178,money:153,distance:1881.1},
-                                {url:require('../../../assets/img/eat4.png'),title:'炭牛韩国烤肉4',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat5.png'),title:'炭牛韩国烤肉5',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat6.png'),title:'炭牛韩国烤肉6',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                            ]
-                            ,src:require('../../../assets/img/tttj.png')}} navigator={this.props.navigator}/>
+                            pickArr:this.state.pickArr,src:require('../../../assets/img/tttj.png')}} navigator={this.props.navigator}/>
                             <Advertisement data={{title:'一元吃',info:'一元吃美食',style:{color:'red'},
-                            data:[
-                                {url:require('../../../assets/img/eat7.png'),title:'炭牛韩国烤肉7',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:178,money:153,distance:1881.1},
-                                {url:require('../../../assets/img/eat2.png'),title:'炭牛韩国烤肉2',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat4.png'),title:'炭牛韩国烤肉4',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat6.png'),title:'炭牛韩国烤肉6',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                            ],src:require('../../../assets/img/yyms.png')}} navigator={this.props.navigator}/>
+                            pickArr:this.state.pickArr,src:require('../../../assets/img/yyms.png')}} navigator={this.props.navigator}/>
                         </View>
                     </View>
                     {/*单独广告这里*/}
                     <View style={styles.bigAdver}>
                         <Advertisement data={{title:'最高立减25',info:'报名威哥 新学员专享',style:{color:'#FB7F66'},
-                            data:[
-                                {url:require('../../../assets/img/eat3.png'),title:'炭牛韩国烤肉3',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:178,money:153,distance:1881.1},
-                                {url:require('../../../assets/img/eat7.png'),title:'炭牛韩国烤肉7',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat6.png'),title:'炭牛韩国烤肉6',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat5.png'),title:'炭牛韩国烤肉5',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                            ],src:require('../../../assets/img/nsj.png')}} navigator={this.props.navigator}/>
+                            pickArr:this.state.pickArr,src:require('../../../assets/img/nsj.png')}} navigator={this.props.navigator}/>
                     </View>
                     {/*4个广告这里*/}
                     <View style={styles.adverContainer}>
                         <View style={styles.adverLeft}>
                             <Advertisement data={{title:'千万红包限时抢',info:'5折起美食畅吃',style:{color:'#FF6100'},
-                            data:[
-                                //{url:require('../../assets/img/eat1.png'),title:'炭牛韩国烤肉',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:178,money:153,distance:1881.1},
-                                {url:require('../../../assets/img/eat2.png'),title:'炭牛韩国烤肉2',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat3.png'),title:'炭牛韩国烤肉3',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                            ]
-                            }} navigator={this.props.navigator}/>
+                            pickArr:this.state.pickArr}} navigator={this.props.navigator}/>
                             <Advertisement data={{title:'鲜花1折起',info:'撩妹更easy',style:{color:'#41A041'},
-                            data:[
-                                {url:require('../../../assets/img/eat4.png'),title:'炭牛韩国烤肉4',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:178,money:153,distance:1881.1},
-                                {url:require('../../../assets/img/eat5.png'),title:'炭牛韩国烤肉5',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat6.png'),title:'炭牛韩国烤肉6',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat7.png'),title:'炭牛韩国烤肉7',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                            ]
-                            }} navigator={this.props.navigator}/>
+                            pickArr:this.state.pickArr}} navigator={this.props.navigator}/>
                         </View>
                         {/*名店右边*/}
                         <View style={styles.adverRight}>
                             <Advertisement data={{title:'踏青好去处',info:'优惠游周边',style:{color:'#FFC0CB'},
-                            data:[
-                                {url:require('../../../assets/img/eat2.png'),title:'炭牛韩国烤肉2',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:178,money:153,distance:1881.1},
-                                {url:require('../../../assets/img/eat5.png'),title:'炭牛韩国烤肉5',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat1.png'),title:'炭牛韩国烤肉1',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat4.png'),title:'炭牛韩国烤肉4',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                            ]
-                            }} navigator={this.props.navigator}/>
+                            pickArr:this.state.pickArr}} navigator={this.props.navigator}/>
                             <Advertisement data={{title:'踏青季特惠',info:'春游装备1元购',style:{color:'#800280'},
-                            data:[
-                                {url:require('../../../assets/img/eat4.png'),title:'炭牛韩国烤肉4',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:178,money:153,distance:1881.1},
-                                {url:require('../../../assets/img/eat6.png'),title:'炭牛韩国烤肉6',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                                {url:require('../../../assets/img/eat7.png'),title:'炭牛韩国烤肉7',info:'[价值343元]套餐2选1，提供免费WiFi提供免费WiFi提供免费WiFi',price:98,money:88,distance:1866.1},
-                            ]
-                            }} navigator={this.props.navigator}/>
+                            pickArr:this.state.pickArr}} navigator={this.props.navigator}/>
                         </View>
                     </View>
                     {/*购物中心*/}
@@ -216,7 +181,11 @@ export default React.createClass({
                         <Effect
                             data={{title:'猜你喜欢',icon:require('../../../assets/img/cnxh.png'),goComponent:ClassicShow}}
                             navigator={this.props.navigator}/>
-                        {this.renderLove()}
+                        <ListView
+                            dataSource={this.state.dataSource}
+                            renderRow={this.renderLove}
+                        />
+                        {/*{this.renderLove()}*/}
                     </View>
                     {/*查看全部*/}
                     {
@@ -315,20 +284,22 @@ export default React.createClass({
             this.setState({
                 isRefreshing: false,
                 showButton: false,
-                data: this.state.data.concat(this.state.refreshData)
+                data: this.state.data.concat(this.getData())
             });
         }, 3000)
     },
-    renderLove(){
-        let data = this.state.data;
-        let arr = [];
-        data.map((msg, i) => {
-            arr.push(<LoveCell key={i} data={msg} navigator={this.props.navigator}
-                //changeNav={this.props.changeNav}
-            />)
-        })
-        return arr;
-
+    renderLove(data){
+        return (
+            <LoveCell
+                data={data}
+                navigator={this.props.navigator}
+                changeNav={this.props.changeNav}
+            />
+        )
+    },
+    Waterfall(){
+        // if (this.waterFalllock) return
+        // this.setState({data: this.state.data.concat(this.getData())})
     },
     renderHotTop(){
         let data = [
@@ -337,7 +308,7 @@ export default React.createClass({
         ];
         let arr = [];
         data.map((msg, i) => {
-            arr.push(<HotWrapTopCell key={i} data={msg}/>)
+            arr.push(<HotWrapTopCell key={i} data={msg} navigator={this.props.navigator}/>)
         })
         return arr;
     },
@@ -350,7 +321,7 @@ export default React.createClass({
         ]
         let arr = [];
         data.map((msg, i) => {
-            arr.push(<HotWrapBottomCell key={i} data={msg}/>)
+            arr.push(<HotWrapBottomCell key={i} data={msg} navigator={this.props.navigator}/>)
         })
         return arr;
     },
@@ -424,8 +395,38 @@ export default React.createClass({
         }
         return arr;
     },
+    getRandom(n, m){
+        return Math.ceil(Math.random() * 10000) % (m - n + 1) + n
+    },
+    getData(){
+        this.waterFalllock = true
+        let arr = this.state.pickArr
+        let getRandom = this.getRandom
+        let data = Mock.mock({
+            // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
+            'list|50': [{
+                // 属性 id 是一个自增数，起始值为 1，每次增 1
+                'url': '',
+                'title': '@ctitle(2,8)',
+                'info': '@integer(1, 9999)元代金券一张，可叠加',
+                'price': '@integer(1, 999)',
+                'index': '@integer(1, 999)',
+                'sellNum': '@integer(1, 9999)'
+            }]
+        }).list
+
+        data.map((val, i) => {
+            val.url = arr[getRandom(0, 16)]
+        })
+
+        this.waterFalllock = false
+
+        return data
+    },
     getInitialState(){
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         return {
+            dataSource: ds,
             tempData: null,
             city: '北京',
             index: 0,
@@ -433,166 +434,41 @@ export default React.createClass({
             showButton: true,
             backTopActive: false,
             judgeArr: [false, true],
-            data: [
-                {
-                    url: require('../../../assets/img/eat1.png'),
-                    title: '美食美食1',
-                    info: '100元代金券一张，可叠加',
-                    price: '70',
-                    index: '100',
-                    sellNum: '4666'
-                },
-                {
-                    url: require('../../../assets/img/eat2.png'),
-                    title: '美食美食2',
-                    info: '101元代金券一张，可叠加',
-                    price: '70',
-                    index: '100',
-                    sellNum: '4777'
-                },
-                {
-                    url: require('../../../assets/img/eat3.png'),
-                    title: '美食美食3',
-                    info: '102元代金券一张，可叠加',
-                    price: '70',
-                    index: '100',
-                    sellNum: '4888'
-                },
-                {
-                    url: require('../../../assets/img/eat4.png'),
-                    title: '美食美食4',
-                    info: '103元代金券一张，可叠加',
-                    price: '70',
-                    index: '100',
-                    sellNum: '4999'
-                },
-                {
-                    url: require('../../../assets/img/eat5.png'),
-                    title: '美食美食5',
-                    info: '104元代金券一张，可叠加',
-                    price: '70',
-                    index: '100',
-                    sellNum: '5099',
-                    needOrder: true
-                },
-                {
-                    url: require('../../../assets/img/eat6.png'),
-                    title: '美食美食6',
-                    info: '105元代金券一张，可叠加',
-                    price: '70',
-                    index: '100',
-                    sellNum: '5199'
-                },
-                {
-                    url: require('../../../assets/img/eat7.png'),
-                    title: '美食美食7',
-                    info: '106元代金券一张，可叠加',
-                    price: '70',
-                    index: '100',
-                    sellNum: '5399',
-                    needOrder: true
-                },
-                {
-                    url: require('../../../assets/img/eat8.png'),
-                    title: '美食美食8',
-                    info: '666元代金券一张，可叠加',
-                    price: '66',
-                    index: '100',
-                    sellNum: '5599'
-                },
-                {
-                    url: require('../../../assets/img/eat9.png'),
-                    title: '美食美食9',
-                    info: '777元代金券一张，可叠加',
-                    price: '77',
-                    index: '100',
-                    sellNum: '5699'
-                },
-                {
-                    url: require('../../../assets/img/eat10.png'),
-                    title: '美食美食10',
-                    info: '888元代金券一张，可叠加',
-                    price: '88',
-                    index: '100',
-                    sellNum: '5899'
-                }
+            pickArr: [
+                require("../../../assets/img/eat1.png"),
+                require("../../../assets/img/eat2.png"),
+                require("../../../assets/img/eat3.png"),
+                require("../../../assets/img/eat4.png"),
+                require("../../../assets/img/eat5.png"),
+                require("../../../assets/img/eat6.png"),
+                require("../../../assets/img/eat7.png"),
+                require("../../../assets/img/eat8.png"),
+                require("../../../assets/img/eat9.png"),
+                require("../../../assets/img/eat10.png"),
+                require("../../../assets/img/eat11.png"),
+                require("../../../assets/img/eat12.png"),
+                require("../../../assets/img/eat13.png"),
+                require("../../../assets/img/eat14.png"),
+                require("../../../assets/img/eat15.png"),
+                require("../../../assets/img/eat16.png"),
+                require("../../../assets/img/eat17.png")
             ],
-            refreshData: [
-                {
-                    url: require('../../../assets/img/eat11.png'),
-                    title: '美食美食11',
-                    info: '999元代金券一张，可叠加',
-                    price: '99',
-                    index: '100',
-                    sellNum: '5999'
-                },
-                {
-                    url: require('../../../assets/img/eat12.png'),
-                    title: '美食美食12',
-                    info: '1333元代金券一张，可叠加',
-                    price: '111',
-                    index: '100',
-                    sellNum: '6199',
-                    needOrder: true
-                },
-                {
-                    url: require('../../../assets/img/eat13.png'),
-                    title: '美食美食13',
-                    info: '1666元代金券一张，可叠加',
-                    price: '222',
-                    index: '100',
-                    sellNum: '6399',
-                    needOrder: true
-                },
-                {
-                    url: require('../../../assets/img/eat14.png'),
-                    title: '美食美食14',
-                    info: '2888元代金券一张，可叠加',
-                    price: '333',
-                    index: '100',
-                    sellNum: '6699',
-                    needOrder: true
-                },
-                {
-                    url: require('../../../assets/img/eat15.png'),
-                    title: '美食美食15',
-                    info: '3333元代金券一张，可叠加',
-                    price: '666',
-                    index: '100',
-                    sellNum: '6899',
-                    needOrder: true
-                },
-                {
-                    url: require('../../../assets/img/eat16.png'),
-                    title: '美食美食16',
-                    info: '6666元代金券一张，可叠加',
-                    price: '888',
-                    index: '100',
-                    sellNum: '8899',
-                    needOrder: true
-                },
-                {
-                    url: require('../../../assets/img/eat17.png'),
-                    title: '美食美食17',
-                    info: '8888元代金券一张，可叠加',
-                    price: '999',
-                    index: '100',
-                    sellNum: '9999'
-                },
-            ]
+            data: []
         }
     },
     componentDidMount(){
         //设定标识符为false
         this.lock = false;
-        fetch('http://www.z1995.com/data.json').then((response) => response.json())
-        .then((responseJson) => {
-            // console.log(responseJson)
-            return responseJson.movies;
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+        this.waterFalllock = false;
+        this.setState({dataSource: this.state.dataSource.cloneWithRows(this.getData())})
+        // fetch('http://www.z1995.com/data.json').then((response) => response.json())
+        // .then((responseJson) => {
+        //     // console.log(responseJson)
+        //     return responseJson.movies;
+        // })
+        // .catch((error) => {
+        //     console.error(error);
+        // });
     },
     changeIndex(e){
         //水平的偏移量
@@ -604,209 +480,3 @@ export default React.createClass({
     }
 })
 
-const styles = StyleSheet.create({
-    container: {
-        // flex: 1,
-        // flexDirection:'row',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        backgroundColor: '#e8e8e8',
-    },
-    shadow: {
-        backgroundColor: '#FF6100',
-        height: StatusBar.currentHeight
-    },
-    header: {
-        flexDirection: 'row',
-        height: 60,
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        backgroundColor: '#FF6100',
-    },
-    headerTxt: {
-        fontSize: 14,
-        color: '#fff'
-    },
-    headerInfo: {
-        color: '#fff',
-        fontSize: 12,
-        marginLeft: 5
-    },
-    headerSearchImg: {
-        width: 20,
-        height: 20,
-        marginLeft: 15
-    },
-    headerInputWrap: {
-        flexDirection: 'row',
-        height: 30,
-        width: width - 120,
-        backgroundColor: 'rgba(255,255,255,0.3)',
-        borderRadius: 15,
-        alignItems: 'center',
-        // justifyContent: 'center',
-        // backgroundColor: '#fff',
-        // borderRadius: 15
-    },
-    headerImg: {
-        width: 24,
-        height: 24
-    },
-    carouselContainer: {
-        height: 180,
-    },
-    carouselCell: {
-        height: 160,
-        width: width,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        backgroundColor: '#fff'
-        // alignItems: 'flex-start',
-        // alignItems: 'center',
-    },
-    circel: {
-        // backgroundColor:'#ccc',
-        width: 6,
-        height: 6,
-        borderRadius: 3,
-        marginLeft: 5
-    },
-    circelContainer: {
-        width: width,
-        position: 'absolute',
-        left: 0,
-        bottom: 0,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 20,
-        backgroundColor: '#fff'
-    },
-    carouselCellWrap: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 80,
-        width: width / 5,
-        // backgroundColor:'red'
-    },
-    carouselCellImg: {
-        width: 30,
-        height: 30
-    },
-    carouselCellTxt: {
-        fontSize: 12,
-        color: '#333',
-        marginTop: 5
-    },
-    storeContainer: {
-        flexDirection: 'row',
-        marginTop: 20
-    },
-    storeLeft: {
-        width: width / 2,
-        height: 120,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRightWidth: 1,
-        borderBottomWidth: 1,
-        borderRightColor: '#e8e8e8',
-        borderBottomColor: '#e8e8e8'
-    },
-    storeLeftImg: {
-        width: 100,
-        height: 30,
-        marginTop: 5
-    },
-    storeLeftInfo: {
-        fontSize: 16,
-        color: '#888'
-    },
-    storeLeftPrice: {
-        flexDirection: 'row',
-        justifyContent: 'center'
-    },
-    priceLeft: {
-        color: '#21C0AF'
-    },
-    priceRight: {
-        color: '#FF6100',
-        backgroundColor: 'yellow'
-    },
-    storeRight: {
-        width: width / 2,
-        height: 120,
-        // backgroundColor:'yellow',
-    },
-    scrollView: {
-        marginBottom: 60 + StatusBar.currentHeight,
-        // alignItems: 'center',
-        // backgroundColor:'red'
-    },
-    bigAdver: {
-        marginTop: 20
-    },
-    adverContainer: {
-        flexDirection: 'row',
-    },
-    adverLeft: {
-        borderRightWidth: 1,
-        borderRightColor: '#e8e8e8',
-        width: width / 2,
-    },
-    adverRight: {
-        width: width / 2,
-    },
-    shopContainer: {
-        marginTop: 20
-    },
-    hotContainer: {
-        marginTop: 20
-    },
-    hotWrap: {
-        padding: 5,
-        backgroundColor: '#fff',
-    },
-    hotWrapTop: {
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
-    hotWrapBottom: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 5
-    },
-    likeContainer: {
-        marginTop: 20,
-    },
-    lookAllWrap: {
-        marginTop: 10,
-        marginBottom: 10,
-        marginLeft: width * 0.1 / 2,
-        height: 40,
-        width: width * 0.9,
-        borderRadius: 20,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    lookAllTxt: {
-        color: '#FF6100',
-        fontSize: 16
-    },
-    backTopWrap: {
-        width: 40,
-        height: 40,
-        position: 'absolute',
-        right: 20,
-        bottom: 95,
-        backgroundColor: '#FF6100',
-        borderRadius: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    backImage: {
-        width: 17,
-        height: 13
-    }
-});
